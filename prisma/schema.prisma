@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model forum{
+  id String @id @default(uuid())
+  name String
+  messages message[]
+}
+
+model message {
+id String @id @default(uuid())
+content String
+forum forum? @relation(fields: [forumId], references: [id])
+forumId String?
+}
+
+model listings{
+  id String @id @default(uuid())
+  name String
+  price String
+  description String  
+}
+// tags? ;)
