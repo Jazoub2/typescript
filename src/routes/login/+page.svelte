@@ -13,7 +13,7 @@
                 <input type="text" name="username">
                 <input type="password" name="password">
                 <button type="submit">LOGIN MAYBE?</button>
-            </div>
+            </div>  
             <span>{form?form.login_fail:""}</span>
         </div> 
     </form>
