@@ -1,18 +1,22 @@
 
-<nav> 
-    <a href="/">home</a>
-    <a href="/forums">forumns</a>
-    <a href="/market">marko</a>
+<script>
+    export let data;
+</script>
+<nav>
+    {#if data.user}
+    <a href="/forums"><em><strong>FORUMS</strong></em></a>
+    <a href="/market"><em><strong>MARKET</strong></em></a>
+    <span>
+        <form action="/login?/logout">
+            <button>LOGOUT</button>
+        </form>
+    </span>
+    {/if}
+
 </nav>  
-
-
 <slot>
 
 </slot>
-
-
-
-
 
 <style>
     nav{
@@ -23,6 +27,12 @@
 
 
         }
+    span{
+        max-width:100px;
+    }
+    form{
+        max-width: inherit;
+    }
 
     a{
         font-size: 20px;

@@ -27,6 +27,20 @@ model listings{
   id String @id @default(uuid())
   name String
   price String
-  description String  
+  description String
+  bids Bid[]
 }
-// tags? ;)
+
+model Bid {
+  id String @id @default(uuid())
+  status Boolean?
+  value String
+  listings listings? @relation(fields: [listingsId], references: [id])
+  listingsId String?
+}
+
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  password String
+}
