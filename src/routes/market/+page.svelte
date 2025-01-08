@@ -25,7 +25,7 @@
             </div>
             <div>
                 <label for="listing_price_input">Listing Price [$]</label>
-                <input placeholder="Price..." id="listing_price_input" name="listing_price" type="number" min="100" max="100000" step="500" required>
+                <input placeholder="Price..." id="listing_price_input" name="listing_price" type="number"required>
             </div>
             <button type="submit">POST</button>
         </form>

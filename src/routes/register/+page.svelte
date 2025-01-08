@@ -1,20 +1,22 @@
 <script>
     import { enhance } from "$app/forms";
-    export let form;
+    export let form; 
 </script>
 
 <main>
-    <form use:enhance action="?/login" method="post">
+    <form use:enhance action="?/register" method="post">
         <div class="form_container">
-            <h2>Login</h2>
+            <h2>Register Account</h2>
             <div class="input_group">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
-                <button type="submit">LOGIN MAYBE?</button>
-                <a href="/register">Haven't got an accont? Register Here</a>
+                <button type="submit">Register</button>
+                <a href="/login">Got an account? Login here</a>
+                <span>
+                    {form ? form.register_fail: ""}
+                    {form ? form.username_in_use_fail:""}
+                </span>
             </div>
-            <span>{form ? form.login_fail : ""}
-            </span>
         </div>
     </form>
 </main>

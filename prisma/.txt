@@ -1,0 +1,15 @@
+winrate = total_wins/matches_played
+wins = total_wins
+    losses = matches_played - total_wins
+winstreak: 
+    conuter som uppdateras för varje match spelad, 
+    hämta karaktären som förlorade och uppdatera dess winstreak till 0
+
+model match: 
+    id
+    characters [p1,p2]
+    winner
+
+
+layout server i haaracters
+

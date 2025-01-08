@@ -52,7 +52,10 @@ export const actions: Actions = {
             where: {id: id},
             data: {status: true}
         })
-
+        await prisma.bid.updateMany({
+            where:{id: {not: id}},
+            data : {status: false}
+        })
     }
 
 }satisfies Actions;

@@ -1,6 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad,Actions } from './$types';
 import { prisma } from '$lib';
+import { error } from 'console';
 export const load = (async () => {
     return {};
 }) satisfies PageServerLoad;
@@ -20,9 +21,10 @@ export const actions: Actions = {
         })
 //register
         if(user == null){
-            user = await prisma.user.create({
+            throw redirect(307, "/register")
+            /*user = await prisma.user.create({
                 data: {username,password}
-              })
+              })*/
         }else{
             if(password != user.password){
                 return fail(400, {login_fail: "incorrect password or username"})
