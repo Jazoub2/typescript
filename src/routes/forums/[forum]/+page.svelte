@@ -4,14 +4,14 @@ export let data;
 import { browser } from '$app/environment';
 import { onDestroy } from 'svelte';
 import { invalidateAll } from '$app/navigation';
-/* if (browser) {
+if (browser) {
 const intervall = setInterval(() => {
 invalidateAll();
 }, 1000); // Justera intervall efter behov
 onDestroy(() => {
 clearInterval(intervall);
 });
-} */
+} 
 
 </script>
 
