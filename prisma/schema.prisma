@@ -21,6 +21,8 @@ model message {
   content String
   forum   forum?  @relation(fields: [forumId], references: [id])
   forumId String?
+  user User? @relation(fields: [userId], references: [id])
+  userId String?
 }
 
 model listings {
@@ -43,6 +45,7 @@ model User {
   id       String @id @default(uuid())
   username String @unique
   password String
+  messages message[]
 }
 
 model character {
